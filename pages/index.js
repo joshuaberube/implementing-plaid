@@ -1,31 +1,19 @@
 import Head from 'next/head'
 import axios from "axios"
-import { useEffect } from 'react'
-import PlaidLink from '../components/PlaidLink';
+import { useEffect, useState } from 'react'
+import PlaidLink from '../components/PlaidLink/PlaidLink'
+import Transactions from '../components/Transactions/Transactions'
 
-const Home = () => {
-
-  useEffect(() => {
-    const test = async () => {
-      try {
-        const test2 = await axios.post("/api/hello")
-  
-        console.log(test2)
-      } catch (err) {
-        console.error(err)
-      }
-    }
-    test()
-  }, [])
-
+const Home = () => {  
   return (
     <div>
       <Head>
-
+        <title>Hello World!</title>
       </Head>
 
-      <main>
+      <main className="bg-gray-100 h-100vh">
         <PlaidLink />
+        <Transactions />
       </main>
     </div>
   )
